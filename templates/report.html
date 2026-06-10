@@ -3,83 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYC AI Compliance Report</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-    </style>
+    <title>Zoning Compliance Audit Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen text-slate-800 antialiased">
+<body class="bg-slate-50 min-h-screen text-slate-800 font-sans">
 
-    <header class="border-b border-slate-200 bg-white shadow-xs">
-        <div class="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="bg-blue-600 text-white p-2 rounded-lg font-bold shadow-sm">NYC</div>
-                <div>
-                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">AI Compliance Engine</h1>
-                    <p class="text-xs text-slate-500 font-medium">Knowledge-Base Powered Zoning Audit</p>
-                </div>
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="bg-white rounded-2xl shadow-sm p-8 border border-slate-100 mb-8 flex justify-between items-center">
+            <div>
+                <span class="text-xs font-bold tracking-wider text-indigo-600 uppercase bg-indigo-50 px-3 py-1 rounded-full">NYC AI Compliance Engine</span>
+                <h1 class="text-3xl font-bold text-slate-900 mt-2">Zoning Parameter Details</h1>
+                <p class="text-slate-500 mt-1">File Analyzed: <span class="font-semibold text-slate-700">{{ filename }}</span></p>
             </div>
-            <div class="flex items-center space-x-2">
-                <span class="inline-flex items-center rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-600/20 ring-inset">
-                    <span class="mr-1 h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Live Cloud Active
-                </span>
-            </div>
-        </div>
-    </header>
-
-    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        
-        <div class="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
-                <div class="pb-4 sm:pb-0">
-                    <span class="text-xs font-semibold tracking-wider text-slate-400 uppercase">Target District</span>
-                    <p class="mt-1 text-lg font-bold text-slate-800">R6 Quality Housing</p>
-                    <span class="text-xs text-blue-600 font-medium">Verified Legal Source</span>
-                </div>
-                <div class="py-4 sm:py-0 sm:pl-6">
-                    <span class="text-xs font-semibold tracking-wider text-slate-400 uppercase">Analyzed File</span>
-                    <p class="mt-1 text-lg font-bold text-slate-800 truncate">{{ filename }}</p>
-                    <span class="text-xs text-slate-500">Passed OCR Text Parsing</span>
-                </div>
-                <div class="pt-4 sm:py-0 sm:pl-6">
-                    <span class="text-xs font-semibold tracking-wider text-slate-400 uppercase">Audit Status</span>
-                    <div class="mt-2 flex items-center space-x-2">
-                        <span class="inline-flex items-center rounded-md bg-amber-50 px-2 py-1 text-xs font-bold text-amber-700 ring-1 ring-amber-600/10">Analysis Complete</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-6 flex justify-between items-center">
-            <h2 class="text-lg font-bold text-slate-900">Zoning Parameter Details</h2>
-            <button onclick="window.print()" class="inline-flex items-center gap-x-2 rounded-lg bg-white px-3.5 py-2 text-sm font-semibold text-slate-700 shadow-xs ring-1 ring-slate-300 ring-inset hover:bg-slate-50 cursor-pointer">
+            <button onclick="window.print()" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-xl font-medium text-sm shadow-sm transition-colors flex items-center gap-2">
                 Export Audit Report (PDF)
             </button>
         </div>
 
-        <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
-            <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
-                <thead class="bg-slate-50 text-xs font-semibold tracking-wider text-slate-500 uppercase border-b border-slate-200">
-                    <tr>
-                        <th style="padding: 16px;">Zoning Parameter Check</th>
-                        <th style="padding: 16px;">Legal Threshold Rule</th>
-                        <th style="padding: 16px;">Live AI Compliance Evaluation</th>
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50 border-bottom border-slate-100 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                        <th class="padding: 16px; p-4 pl-6">Zoning Parameter</th>
+                        <th class="padding: 16px; p-4">Legal Reference Threshold</th>
+                        <th class="padding: 16px; p-4 pr-6">AI Evaluation Status & Legal Section Reference</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-slate-100 bg-white">
+                <tbody>
                     {{ ai_rows | safe }}
                 </tbody>
             </table>
         </div>
 
-        <div class="mt-8 flex justify-center">
-            <a href="/workspace" class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-xs hover:bg-slate-800 transition-colors cursor-pointer">
-                ← Upload Another Document
-            </a>
+        <div class="mt-6 text-center">
+            <a href="/workspace" class="text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition-colors">← Upload Another Proposal Document</a>
         </div>
-    </main>
+    </div>
 
 </body>
 </html>
