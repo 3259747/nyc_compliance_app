@@ -130,11 +130,13 @@ def upload_file():
                 ai_table_rows = response.text
                 break
             except Exception as e:
-                if "503" in str(e) and attempt < 2:
-                    print(f"Google server busy. Retrying in 2 seconds... (Attempt {attempt + 1}/3)")
-                    time.sleep(2)
+                error_msg = str(e)
+                # If the free tier is busy (503) or rate-limited (429), freeze for 6 seconds and retry
+                if ("503" in error_msg or "429" in error_msg or "Quota" in error_msg) and attempt < 2:
+                    print(f"API Rate Limited or Busy. Pausing 6 seconds... (Attempt {attempt + 1}/3)")
+                    time.sleep(6)
                 else:
-                    return f"<h3>AI Connection Error:</h3><p>{str(e)}</p>", 500
+                    return f"<h3>AI Connection Error:</h3><p>{error_msg}</p>", 500
 
         return render_template('report.html', filename=file.filename, ai_rows=ai_table_rows)
 
