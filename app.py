@@ -66,7 +66,7 @@ def upload_file():
         except Exception as e:
             return "<h3>Error loading Knowledge Base.</h3>", 500
 
-        # Updated Prompt: Running 4 Strategic Audits Including Floor Area Ratio (FAR)
+        # Updated Prompt: Running 6 Strategic Audits for Premium Value
         prompt = f"""
         You are an expert NYC Zoning Auditor checking compliance for an R6 Quality Housing District.
         
@@ -76,11 +76,13 @@ def upload_file():
         Analyze the following document text:
         \"\"\"{extracted_text}\"\"\"
         
-        Perform 4 precise audits based strictly on the provided legal text rules and exceptions:
+        Perform 6 precise audits based strictly on the provided legal text rules and exceptions:
         1. Maximum Building Height
         2. Maximum Lot Coverage
         3. Minimum Rear Yard Depth
         4. Floor Area Ratio (FAR)
+        5. Sky Exposure Plane Compliance
+        6. Lot Area per Dwelling Unit (Density Factor)
         
         Return output strictly as a single clean HTML table snippet (no markdown block quotes like ```html):
         
@@ -99,10 +101,20 @@ def upload_file():
             <td style='padding: 16px; color: #475569;'>30 Feet Min (Exceptions apply)</td>
             <td style='padding: 16px;'>[Insert status badge and details quoting the law section used]</td>
         </tr>
-        <tr>
+        <tr style='border-bottom: 1px solid #e2e8f0;'>
             <td style='padding: 16px; font-weight: 600; color: #1e293b;'>Floor Area Ratio (FAR)</td>
             <td style='padding: 16px; color: #475569;'>2.20 Max (Up to 2.43 on Wide Streets)</td>
             <td style='padding: 16px;'>[Insert status badge and details calculating the proposed FAR vs allowed limits based on text specs]</td>
+        </tr>
+        <tr style='border-bottom: 1px solid #e2e8f0;'>
+            <td style='padding: 16px; font-weight: 600; color: #1e293b;'>Sky Exposure Plane</td>
+            <td style='padding: 16px; color: #475569;'>Initial setback at 60ft (Ratio slope rules apply)</td>
+            <td style='padding: 16px;'>[Insert status badge and details checking if upper story setbacks conform to slope rules]</td>
+        </tr>
+        <tr>
+            <td style='padding: 16px; font-weight: 600; color: #1e293b;'>Lot Area per Dwelling Unit</td>
+            <td style='padding: 16px; color: #475569;'>680 sq ft min lot area per apartment</td>
+            <td style='padding: 16px;'>[Insert status badge and details calculating density factor: Lot Area / Proposed Units]</td>
         </tr>
         """
 
