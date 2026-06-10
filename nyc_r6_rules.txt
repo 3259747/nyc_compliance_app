@@ -8,3 +8,8 @@ The maximum lot coverage for a residential building in an R6 district shall not 
 
 SECTION 23-47: MINIMUM REQUIRED REAR YARDS
 In R6 districts, a rear yard with a depth of not less than 30 feet shall be provided at every rear lot line of a residential building. For shallow lots, a reduction of 1 foot of yard depth is permitted for every foot the lot depth falls below 100 feet, down to a absolute minimum floor of 20 feet.
+---
+PARAMETER 4: FLOOR AREA RATIO (FAR)
+- R6 Quality Housing Districts inside the Manhattan Core / typical urban areas have a Maximum FAR of 2.20 for residential buildings.
+- R6 Quality Housing Districts outside the Manhattan Core (with wide streets) allow an optional Maximum FAR of 2.43 if utilizing specific Quality Housing bulk regulations.
+- Calculation Rule: Total Proposed Floor Area divided by the Total Lot Area must not exceed these limits. If it exceeds 2.20 (or 2.43 where explicitly specified for wide streets), it is a FAILED audit.

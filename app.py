@@ -9,31 +9,31 @@ app = Flask(__name__)
 if not os.path.exists('uploads'):
     os.makedirs('uploads')
 
-# --- NEW: LOGIN PAGE ROUTE ---
+# --- 1. ENTERPRISE GATEWAY ROUTE ---
 @app.route('/')
 def login_page():
-    # This automatically shows your beautiful new split-screen login page first!
+    # Shows your brand new premium split-screen login page first!
     return render_template('login.html')
 
-# --- NEW: LOGIN SUBMISSION ROUTE ---
+# --- 2. AUTHENTICATION HANDLER ---
 @app.route('/login', methods=['POST'])
 def handle_login():
     username = request.form.get('username')
     password = request.form.get('password')
     
-    # Simple, secure check for your enterprise portal
+    # Premium portal gatekeeper logic
     if username == "admin" and password == "NYC_AI_2026":
-        # If correct, send them to the document uploader workspace
         return redirect(url_for('workspace'))
     else:
         return "<h3>Access Denied:</h3><p>Invalid username or password. Please go back and try again.</p>", 401
 
-# --- UPDATED: THE ACTUAL AUDIT WORKSPACE ---
+# --- 3. THE AUDIT WORKSPACE ---
 @app.route('/workspace')
 def workspace():
-    # This renders your document upload screen (index.html)
+    # Renders your streamlined, passcode-free document uploader
     return render_template('index.html')
 
+# --- 4. LIVE AUDIT ENGINE PROCESSING ---
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
@@ -48,7 +48,7 @@ def upload_file():
         file_path = os.path.join('uploads', file.filename)
         file.save(file_path)
         
-        # 1. Read the user's uploaded document text
+        # Extract Text from Uploaded PDF Proposal
         try:
             reader = PdfReader(file_path)
             extracted_text = ""
@@ -59,14 +59,14 @@ def upload_file():
         except Exception as e:
             return f"Error reading file: {str(e)}", 400
 
-        # 2. Read the Law Book Knowledge Base
+        # Load Legal Knowledge Base
         try:
             with open('nyc_r6_rules.txt', 'r') as law_file:
                 zoning_laws = law_file.read()
         except Exception as e:
             return "<h3>Error loading Knowledge Base.</h3>", 500
 
-        # 3. Call the Real AI Brain with Smart Retries
+        # Updated Prompt: Running 4 Strategic Audits Including Floor Area Ratio (FAR)
         prompt = f"""
         You are an expert NYC Zoning Auditor checking compliance for an R6 Quality Housing District.
         
@@ -76,10 +76,11 @@ def upload_file():
         Analyze the following document text:
         \"\"\"{extracted_text}\"\"\"
         
-        Perform 3 precise audits based strictly on the provided legal text rules and exceptions:
+        Perform 4 precise audits based strictly on the provided legal text rules and exceptions:
         1. Maximum Building Height
         2. Maximum Lot Coverage
         3. Minimum Rear Yard Depth
+        4. Floor Area Ratio (FAR)
         
         Return output strictly as a single clean HTML table snippet (no markdown block quotes like ```html):
         
@@ -93,10 +94,15 @@ def upload_file():
             <td style='padding: 16px; color: #475569;'>60% Max (Interior) / 80% Max (Corner)</td>
             <td style='padding: 16px;'>[Insert status badge and details quoting the law section used]</td>
         </tr>
-        <tr>
+        <tr style='border-bottom: 1px solid #e2e8f0;'>
             <td style='padding: 16px; font-weight: 600; color: #1e293b;'>Minimum Rear Yard Depth</td>
             <td style='padding: 16px; color: #475569;'>30 Feet Min (Exceptions apply)</td>
             <td style='padding: 16px;'>[Insert status badge and details quoting the law section used]</td>
+        </tr>
+        <tr>
+            <td style='padding: 16px; font-weight: 600; color: #1e293b;'>Floor Area Ratio (FAR)</td>
+            <td style='padding: 16px; color: #475569;'>2.20 Max (Up to 2.43 on Wide Streets)</td>
+            <td style='padding: 16px;'>[Insert status badge and details calculating the proposed FAR vs allowed limits based on text specs]</td>
         </tr>
         """
 
@@ -118,7 +124,6 @@ def upload_file():
                 else:
                     return f"<h3>AI Connection Error:</h3><p>{str(e)}</p>", 500
 
-        # 4. Render the template cleanly
         return render_template('report.html', filename=file.filename, ai_rows=ai_table_rows)
 
 if __name__ == '__main__':
