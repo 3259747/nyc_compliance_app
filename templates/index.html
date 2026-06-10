@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYC AI Compliance Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; background-color: #f8fafc; color: #0f172a; line-height: 1.5; display: flex; flex-direction: column; min-height: 100vh;">
+
+    <div style="background-color: #1e3a8a; color: white; padding: 24px 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">NYC AI Compliance Engine</h1>
+            <p style="margin: 4px 0 0 0; color: #bfdbfe; font-size: 14px;">Automated Zoning Audit & Risk Assessment</p>
+        </div>
+    </div>
+
+    <div style="max-width: 800px; width: 100%; margin: 60px auto; padding: 0 20px; box-sizing: border-box; flex-grow: 1;">
+        <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);">
+            
+            <h2 style="margin-top: 0; font-size: 22px; font-weight: 700; color: #1e293b;">Zoning Audit Intake Portal</h2>
+            <p style="color: #64748b; font-size: 15px; margin-bottom: 32px;">Upload your building proposal description, structural notes, or text blueprints below. Our AI compliance model will parse the document text live and cross-reference it against <strong>R6 Quality Housing District rules</strong>.</p>
+            
+            <form action="/upload" method="POST" enctype="multipart/form-data" style="background-color: #f8fafc; border: 2px dashed #cbd5e1; padding: 40px 20px; border-radius: 12px; text-align: center;">
+                
+                <div style="margin-bottom: 24px; text-align: left; max-width: 300px; margin-left: auto; margin-right: auto;">
+                    <label for="passcode" style="display: block; font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 6px;">Enter Beta Access Passcode:</label>
+                    <input type="password" id="passcode" name="passcode" placeholder="••••••••" required style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+                </div>
+                
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;">
+
+                <div style="margin-bottom: 20px;">
+                    <span style="font-size: 40px;">📄</span>
+                </div>
+                <label for="file-upload" style="display: inline-block; background-color: white; color: #1e3a8a; border: 1px solid #cbd5e1; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                    Select PDF or Text File
+                </label>
+                <input id="file-upload" type="file" name="file" style="display: none; " onchange="document.getElementById('file-name').innerText = 'Selected file: ' + this.files[0].name;">
+                
+                <div id="file-name" style="margin-top: 12px; font-size: 14px; color: #64748b; font-weight: 500;">No file chosen yet</div>
+                
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+                
+                <input type="submit" value="Run Live AI Compliance Audit" style="background-color: #2563eb; color: white; border: none; padding: 12px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; box-shadow: 0 4px 6px -1px rgba(37,99,235,0.2); width: 100%; max-width: 300px;">
+            </form>
+            
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e2e8f0; background: white;">
+        NYC AI Compliance Engine Prototype v1.0
+    </div>
+
+</body>
+</html>
