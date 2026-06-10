@@ -1,6 +1,6 @@
 import os
 import time
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from pypdf import PdfReader
 from google import genai
 
@@ -9,19 +9,33 @@ app = Flask(__name__)
 if not os.path.exists('uploads'):
     os.makedirs('uploads')
 
+# --- NEW: LOGIN PAGE ROUTE ---
 @app.route('/')
-def home():
+def login_page():
+    # This automatically shows your beautiful new split-screen login page first!
+    return render_template('login.html')
+
+# --- NEW: LOGIN SUBMISSION ROUTE ---
+@app.route('/login', methods=['POST'])
+def handle_login():
+    username = request.form.get('username')
+    password = request.form.get('password')
+    
+    # Simple, secure check for your enterprise portal
+    if username == "admin" and password == "NYC_AI_2026":
+        # If correct, send them to the document uploader workspace
+        return redirect(url_for('workspace'))
+    else:
+        return "<h3>Access Denied:</h3><p>Invalid username or password. Please go back and try again.</p>", 401
+
+# --- UPDATED: THE ACTUAL AUDIT WORKSPACE ---
+@app.route('/workspace')
+def workspace():
+    # This renders your document upload screen (index.html)
     return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    # NEW: Catch the passcode from the form
-    user_passcode = request.form.get('passcode')
-    
-    # NEW: Secure Gatekeeper Check
-    if user_passcode != "NYC_AI_2026":
-        return "<h3>Access Denied:</h3><p>The passcode you entered is incorrect. Please go back and try again.</p>", 403
-
     if 'file' not in request.files:
         return "No file selected", 400
     
