@@ -60,17 +60,17 @@ def run_local_backup_audit(text, district_file):
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 20 else fail_badge} <span class="ml-2">Proposed rear yard clearance depth of {rear_yard}ft checked against commercial minimums.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR)</td>
-            <td class="p-4 text-gray-500 font-medium">15.00 Max</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 15.0 else fail_badge} <span class="ml-2">Proposed master density calculation of FAR {far} fits inside commercial limits.</span></td>
+            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
+            <td class="p-4 text-gray-500 font-medium">15.00 Max (Formula: Lot Area * Max FAR)</td>
+            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 15.0 else fail_badge} <span class="ml-2">Proposed mass density calculation of FAR {far} fits inside commercial limits. Allowable Yield evaluated.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane</td>
+            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
             <td class="p-4 text-gray-500 font-medium">Tower vector ratios</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Lot Area per Dwelling Unit</td>
+            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
             <td class="p-4 text-gray-500 font-medium">Commercial profile metrics</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
         </tr>
@@ -93,17 +93,17 @@ def run_local_backup_audit(text, district_file):
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">Proposed backyard space clearance depth of {rear_yard}ft meets deep lot configurations.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR)</td>
-            <td class="p-4 text-slate-500 font-medium">6.02 Max</td>
+            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
+            <td class="p-4 text-slate-500 font-medium">6.02 Max (Formula: Lot Area * Max FAR)</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 6.02 else fail_badge} <span class="ml-2">Proposed building density of FAR {far} has been verified under standard R8 boundaries.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane</td>
+            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
             <td class="p-4 text-gray-500 font-medium">Setback slope ratios</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Lot Area per Dwelling Unit</td>
+            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
             <td class="p-4 text-gray-500 font-medium">Residential density factors</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
         </tr>
@@ -126,17 +126,17 @@ def run_local_backup_audit(text, district_file):
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">Proposed backyard separation clearance perimeter depth of {rear_yard}ft complies perfectly.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR)</td>
-            <td class="p-4 text-gray-500 font-medium">3.44 Max</td>
+            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
+            <td class="p-4 text-gray-500 font-medium">3.44 Max (Formula: Lot Area * Max FAR)</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 3.44 else fail_badge} <span class="ml-2">Proposed mass density master calculation of FAR {far} falls within R7 sector envelopes.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane</td>
+            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
             <td class="p-4 text-gray-500 font-medium">Setback slope ratios</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Lot Area per Dwelling Unit</td>
+            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
             <td class="p-4 text-gray-500 font-medium">Residential density factors</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
         </tr>
@@ -159,17 +159,17 @@ def run_local_backup_audit(text, district_file):
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">A rear yard depth of {rear_yard} feet is provided, which meets the minimum requirement of not less than 30 feet. (SECTION 23-47)</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR)</td>
+            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
             <td class="p-4 text-gray-500 font-medium">2.20 Max (Up to 2.43 on Wide Streets)</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 2.20 else fail_badge} <span class="ml-2">The proposed FAR is {far} (21,500 sq ft / 10,000 sq ft), which does not exceed the maximum permitted FAR of 2.20 for an R6 Quality Housing district in a typical urban area outside the Manhattan Core.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane</td>
+            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
             <td class="p-4 text-gray-500 font-medium">Initial setback at 60ft (Ratio slope rules apply)</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">The provided "OFFICIAL ZONING LEGAL TEXT" does not contain enough explicit text information to audit structural Sky Exposure Plane compliance beyond the maximum building height.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Lot Area per Dwelling Unit</td>
+            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
             <td class="p-4 text-gray-500 font-medium">680 sq ft min lot area per apartment</td>
             <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">The provided "OFFICIAL ZONING LEGAL TEXT" does not contain clear, active parameters regarding explicit dwelling unit or density factor requirements.</span></td>
         </tr>
@@ -213,33 +213,53 @@ def upload_file():
         except Exception:
             zoning_laws = f"Active rules for {clean_district_display} developments."
 
+        # --- ENTERPRISE AI CALCULATION SUITE PROMPT ---
         prompt = f"""
-        You are an expert NYC Zoning Auditor checking compliance for a building proposal inside an {clean_district_display} framework.
+        You are a Senior NYC Zoning Compliance Engineer and Land Use Attorney. 
+        Analyze the following EXTRACTED BLUEPRINT TEXT against the provided OFFICIAL ZONING LEGAL TEXT to execute multi-layered mathematical compliance calculations.
+
         OFFICIAL ZONING SOURCE OF TRUTH LAW TEXT: \"\"\"{zoning_laws}\"\"\"
         PROPOSED BUILDING SPECIFICATIONS TEXT TO AUDIT: \"\"\"{extracted_text}\"\"\"
 
         CRITICAL OUTPUT INSTRUCTION: 
-        You must look at the proposed specs. If the text does not contain any relevant building specs (e.g. it is talking about installing Microsoft Office or other unrelated topics), you must immediately discover that the building specs are missing or unrelated, and return the table rows using the default parameters but marking them clearly.
-        
-        Return exactly 6 rows matching these precise parameters. Output MUST be strictly clean HTML <tr> rows. Do not use markdown format wraps like ```html.
+        If the text does not contain relevant building specs, return the fallback table layout using standard placeholders.
+        Output MUST be strictly clean HTML <tr> rows. Do not use markdown format wraps like ```html or ```.
         
         Each row MUST have exactly three <td> columns matching this structure:
         1. <td class="p-4 font-bold text-gray-900">[Parameter Name]</td>
-        2. <td class="p-4 text-gray-500 font-medium">[Legal Threshold Target Rule]</td>
-        3. <td class="p-4 text-gray-600 font-medium flex items-center gap-3">[Pill Badge HTML] <span class="ml-2">[Compliance Text Explanation detailing the numbers found or missing]</span></td>
+        2. <td class="p-4 text-gray-500 font-medium">[Legal Threshold Target Rule Breakdown]</td>
+        3. <td class="p-4 text-gray-600 font-medium flex items-center gap-3">[Pill Badge HTML] <span class="ml-2">[Compliance Text Explanation with explicit mathematical results]</span></td>
 
         Use ONLY these three pill badge styles matching our app build rules:
         - Passed Badge: '<span class="inline-flex items-center rounded-full badge-passed px-2.5 py-0.5 text-xs font-bold shadow-sm">PASSED</span>'
         - Violation Badge: '<span class="inline-flex items-center rounded-full badge-failed px-2.5 py-0.5 text-xs font-bold shadow-sm">VIOLATION</span>'
         - Not Audited Badge: '<span class="inline-flex items-center rounded-full badge-warn px-2.5 py-0.5 text-xs font-bold shadow-sm">NOT AUDITED</span>'
 
-        The 6 parameters to generate rows for are:
+        You must generate exactly these 6 detailed compliance parameters, embedding the 4 math calculations directly within them:
+
         1. Maximum Building Height
+        - Target: Audit building heights.
+        - Math Note: Compare maximum height allowed against proposed height.
+
         2. Maximum Lot Coverage
+        - Target: Audit lot coverage footprint percentage.
+        - Math Note: Confirm coverage does not breach district thresholds.
+
         3. Minimum Rear Yard Depth
-        4. Floor Area Ratio (FAR)
-        5. Sky Exposure Plane
-        6. Lot Area per Dwelling Unit
+        - Target: Audit yard clearance perimeter.
+        - Math Note: Confirm backyard separation distance.
+
+        4. Floor Area Ratio (FAR) & Total Yield [CALCULATION 1]
+        - Target: Locate Lot Area (Sq Ft) and District FAR limit. Calculate: Max Allowable Gross Floor Area = Lot Area * District FAR. 
+        - Explanation Note: Explicitly print the math numbers: "Lot Size: X sq ft, Max Allowed Area: Y sq ft, Proposed Area: Z sq ft."
+
+        5. Sky Exposure Plane & Setbacks [CALCULATION 3]
+        - Target: Compute setback trigonometry slope thresholds based on initial height limitations and front setback vectors.
+        - Explanation Note: Run geometric check relative to front wall clearance rules.
+
+        6. Residential Density & Unit Caps [CALCULATION 2 & 4]
+        - Target: Compute residential capacity. Formula: Max Legal Apartments = (Max Allowable Floor Area) / (District Dwelling Unit Factor or Open Space sliding metric adjustments).
+        - Explanation Note: Explicitly print the maximum number of apartments permitted vs. what the blueprint proposes.
         """
         
         client = genai.Client()
