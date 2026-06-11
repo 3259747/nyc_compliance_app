@@ -45,133 +45,133 @@ def run_local_backup_audit(text, district_file):
     if "c6" in district_file:
         rows = f"""
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Building Height</td>
-            <td class="p-4 text-gray-500 font-medium">Tower Regulations Apply</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{pass_badge} <span class="ml-2">Proposed structure height of {height}ft checked cleanly against dynamic sky exposure tower setback vectors.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Building Height</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Tower Regulations Apply</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{pass_badge} <span class="ml-2">Proposed structure height of {height}ft checked cleanly against dynamic sky exposure tower setback vectors.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Lot Coverage</td>
-            <td class="p-4 text-gray-500 font-medium">Up to 100% Permitted</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{pass_badge} <span class="ml-2">Proposed lot footprint coverage of {coverage}% maps comfortably under commercial allotments.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Lot Coverage</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Up to 100% Permitted</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{pass_badge} <span class="ml-2">Proposed lot footprint coverage of {coverage}% maps comfortably under commercial allotments.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
-            <td class="p-4 text-gray-500 font-medium">20 Feet Min</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 20 else fail_badge} <span class="ml-2">Proposed rear yard clearance depth of {rear_yard}ft checked against commercial minimums.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">20 Feet Min</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 20 else fail_badge} <span class="ml-2">Proposed rear yard clearance depth of {rear_yard}ft checked against commercial minimums.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
-            <td class="p-4 text-gray-500 font-medium">15.00 Max (Formula: Lot Area * Max FAR)</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 15.0 else fail_badge} <span class="ml-2">Proposed mass density calculation of FAR {far} fits inside commercial limits. Allowable Yield evaluated.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">15.00 Max (Formula: Lot Area * Max FAR)</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 15.0 else fail_badge} <span class="ml-2">Proposed mass density calculation of FAR {far} fits inside commercial limits. Allowable Yield evaluated.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
-            <td class="p-4 text-gray-500 font-medium">Tower vector ratios</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Tower vector ratios</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
-            <td class="p-4 text-gray-500 font-medium">Commercial profile metrics</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Commercial profile metrics</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
         </tr>
         """
     elif "r8" in district_file:
         rows = f"""
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Building Height</td>
-            <td class="p-4 text-gray-500 font-medium">105 Feet Max</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if height <= 105 else fail_badge} <span class="ml-2">Proposed height of {height}ft evaluated safely against multi-tier apartment tower limitations.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Building Height</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">105 Feet Max</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if height <= 105 else fail_badge} <span class="ml-2">Proposed height of {height}ft evaluated safely against multi-tier apartment tower limitations.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Lot Coverage</td>
-            <td class="p-4 text-gray-500 font-medium">65% Max</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if coverage <= 65 else fail_badge} <span class="ml-2">Proposed lot occupancy footprint coverage of {coverage}% checked against R8 caps.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Lot Coverage</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">65% Max</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if coverage <= 65 else fail_badge} <span class="ml-2">Proposed lot occupancy footprint coverage of {coverage}% checked against R8 caps.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
-            <td class="p-4 text-gray-500 font-medium">30 Feet Min</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">Proposed backyard space clearance depth of {rear_yard}ft meets deep lot configurations.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">30 Feet Min</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">Proposed backyard space clearance depth of {rear_yard}ft meets deep lot configurations.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
-            <td class="p-4 text-slate-500 font-medium">6.02 Max (Formula: Lot Area * Max FAR)</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 6.02 else fail_badge} <span class="ml-2">Proposed building density of FAR {far} has been verified under standard R8 boundaries.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">6.02 Max (Formula: Lot Area * Max FAR)</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 6.02 else fail_badge} <span class="ml-2">Proposed building density of FAR {far} has been verified under standard R8 boundaries.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
-            <td class="p-4 text-gray-500 font-medium">Setback slope ratios</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Setback slope ratios</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
-            <td class="p-4 text-gray-500 font-medium">Residential density factors</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Residential density factors</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
         </tr>
         """
     elif "r7" in district_file:
         rows = f"""
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Building Height</td>
-            <td class="p-4 text-gray-500 font-medium">75 Feet Max</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if height <= 75 else fail_badge} <span class="ml-2">Proposed mid-rise elevator structural height profile of {height}ft fits inside district parameters.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Building Height</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">75 Feet Max</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if height <= 75 else fail_badge} <span class="ml-2">Proposed mid-rise elevator structural height profile of {height}ft fits inside district parameters.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Lot Coverage</td>
-            <td class="p-4 text-gray-500 font-medium">65% Max</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if coverage <= 65 else fail_badge} <span class="ml-2">Proposed lot footprint occupancy of {coverage}% matches allocations allowed for high quality housing.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Lot Coverage</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">65% Max</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if coverage <= 65 else fail_badge} <span class="ml-2">Proposed lot footprint occupancy of {coverage}% matches allocations allowed for high quality housing.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
-            <td class="p-4 text-gray-500 font-medium">30 Feet Min</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">Proposed backyard separation clearance perimeter depth of {rear_yard}ft complies perfectly.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">30 Feet Min</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">Proposed backyard separation clearance perimeter depth of {rear_yard}ft complies perfectly.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
-            <td class="p-4 text-gray-500 font-medium">3.44 Max (Formula: Lot Area * Max FAR)</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 3.44 else fail_badge} <span class="ml-2">Proposed mass density master calculation of FAR {far} falls within R7 sector envelopes.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">3.44 Max (Formula: Lot Area * Max FAR)</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 3.44 else fail_badge} <span class="ml-2">Proposed mass density master calculation of FAR {far} falls within R7 sector envelopes.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
-            <td class="p-4 text-gray-500 font-medium">Setback slope ratios</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Setback slope ratios</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning source data does not contain explicit local profile dimensions to execute mathematical setback slope rule audits.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
-            <td class="p-4 text-gray-500 font-medium">Residential density factors</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Residential density factors</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">Zoning legal framework rules do not supply transient structural unit factor metrics.</span></td>
         </tr>
         """
     else: # R6 Fallback Engine matching your blueprint specifications
         rows = f"""
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Building Height</td>
-            <td class="p-4 text-gray-500 font-medium">60 Feet or 6 Stories Max</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if height <= 60 else fail_badge} <span class="ml-2">Proposed height is {height} feet ({int(height/10) if height else 5} Stories), which is less than the maximum permitted height of 60 feet or 6 stories. (SECTION 23-633)</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Building Height</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">60 Feet or 6 Stories Max</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if height <= 60 else fail_badge} <span class="ml-2">Proposed height is {height} feet ({int(height/10) if height else 5} Stories), which is less than the maximum permitted height of 60 feet or 6 stories. (SECTION 23-633)</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Maximum Lot Coverage</td>
-            <td class="p-4 text-gray-500 font-medium">60% Max (Interior Lot)</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if coverage <= 60 else fail_badge} <span class="ml-2">The project is on an interior lot with a proposed lot coverage of {coverage}%, which does not exceed the maximum permitted 60 percent. (SECTION 23-145)</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Maximum Lot Coverage</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">60% Max (Interior Lot)</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if coverage <= 60 else fail_badge} <span class="ml-2">The project is on an interior lot with a proposed lot coverage of {coverage}%, which does not exceed the maximum permitted 60 percent. (SECTION 23-145)</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
-            <td class="p-4 text-gray-500 font-medium">30 Feet Min (Exceptions apply)</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">A rear yard depth of {rear_yard} feet is provided, which meets the minimum requirement of not less than 30 feet. (SECTION 23-47)</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Minimum Rear Yard Depth</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">30 Feet Min (Exceptions apply)</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if rear_yard >= 30 else fail_badge} <span class="ml-2">A rear yard depth of {rear_yard} feet is provided, which meets the minimum requirement of not less than 30 feet. (SECTION 23-47)</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
-            <td class="p-4 text-gray-500 font-medium">2.20 Max (Up to 2.43 on Wide Streets)</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 2.20 else fail_badge} <span class="ml-2">The proposed FAR is {far} (21,500 sq ft / 10,000 sq ft), which does not exceed the maximum permitted FAR of 2.20 for an R6 Quality Housing district in a typical urban area outside the Manhattan Core.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Floor Area Ratio (FAR) & Total Yield</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">2.20 Max (Up to 2.43 on Wide Streets)</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{" " + pass_badge if far <= 2.20 else fail_badge} <span class="ml-2">The proposed FAR is {far} (21,500 sq ft / 10,000 sq ft), which does not exceed the maximum permitted FAR of 2.20 for an R6 Quality Housing district in a typical urban area outside the Manhattan Core.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
-            <td class="p-4 text-gray-500 font-medium">Initial setback at 60ft (Ratio slope rules apply)</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">The provided "OFFICIAL ZONING LEGAL TEXT" does not contain enough explicit text information to audit structural Sky Exposure Plane compliance beyond the maximum building height.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Sky Exposure Plane & Setbacks</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">Initial setback at 60ft (Ratio slope rules apply)</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">The provided "OFFICIAL ZONING LEGAL TEXT" does not contain enough explicit text information to audit structural Sky Exposure Plane compliance beyond the maximum building height.</span></td>
         </tr>
         <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="p-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
-            <td class="p-4 text-gray-500 font-medium">680 sq ft min lot area per apartment</td>
-            <td class="p-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">The provided "OFFICIAL ZONING LEGAL TEXT" does not contain clear, active parameters regarding explicit dwelling unit or density factor requirements.</span></td>
+            <td class="px-4 py-4 font-bold text-gray-900">Residential Density & Unit Caps</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">680 sq ft min lot area per apartment</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">{warn_badge} <span class="ml-2">The provided "OFFICIAL ZONING LEGAL TEXT" does not contain clear, active parameters regarding explicit dwelling unit or density factor requirements.</span></td>
         </tr>
         """
     return rows
@@ -213,7 +213,7 @@ def upload_file():
         except Exception:
             zoning_laws = f"Active rules for {clean_district_display} developments."
 
-        # --- ENTERPRISE AI CALCULATION SUITE PROMPT ---
+        # --- ENTERPRISE AI CALCULATION SUITE PROMPT FORCED HTML COMPLIANCE ---
         prompt = f"""
         You are a Senior NYC Zoning Compliance Engineer and Land Use Attorney. 
         Analyze the following EXTRACTED BLUEPRINT TEXT against the provided OFFICIAL ZONING LEGAL TEXT to execute multi-layered mathematical compliance calculations.
@@ -225,10 +225,12 @@ def upload_file():
         If the text does not contain relevant building specs, return the fallback table layout using standard placeholders.
         Output MUST be strictly clean HTML <tr> rows. Do not use markdown format wraps like ```html or ```.
         
-        Each row MUST have exactly three <td> columns matching this structure:
-        1. <td class="p-4 font-bold text-gray-900">[Parameter Name]</td>
-        2. <td class="p-4 text-gray-500 font-medium">[Legal Threshold Target Rule Breakdown]</td>
-        3. <td class="p-4 text-gray-600 font-medium flex items-center gap-3">[Pill Badge HTML] <span class="ml-2">[Compliance Text Explanation with explicit mathematical results]</span></td>
+        Each row MUST structure its data inside exactly three <td> columns matching this structural style:
+        <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="px-4 py-4 font-bold text-gray-900">[Parameter Name]</td>
+            <td class="px-4 py-4 text-gray-500 font-medium">[Legal Threshold Target Rule Breakdown]</td>
+            <td class="px-4 py-4 text-gray-600 font-medium flex items-center gap-3">[Pill Badge HTML] <span class="ml-2">[Compliance Text Explanation with explicit mathematical results]</span></td>
+        </tr>
 
         Use ONLY these three pill badge styles matching our app build rules:
         - Passed Badge: '<span class="inline-flex items-center rounded-full badge-passed px-2.5 py-0.5 text-xs font-bold shadow-sm">PASSED</span>'
