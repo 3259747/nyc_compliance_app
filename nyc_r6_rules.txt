@@ -13,3 +13,12 @@ PARAMETER 4: FLOOR AREA RATIO (FAR)
 - R6 Quality Housing Districts inside the Manhattan Core / typical urban areas have a Maximum FAR of 2.20 for residential buildings.
 - R6 Quality Housing Districts outside the Manhattan Core (with wide streets) allow an optional Maximum FAR of 2.43 if utilizing specific Quality Housing bulk regulations.
 - Calculation Rule: Total Proposed Floor Area divided by the Total Lot Area must not exceed these limits. If it exceeds 2.20 (or 2.43 where explicitly specified for wide streets), it is a FAILED audit.
+---
+PARAMETER 5: SKY EXPOSURE PLANE
+- In R6 districts, the Sky Exposure Plane begins at a height of 60 feet (or 6 stories) above the street line.
+- Above this height, the building must set back matching a slope ratio of 5.6 to 1 on a wide street, or 2.7 to 1 on a narrow street. If a building penetrates this theoretical sloping plane without the required setback, it is a FAILED audit.
+
+---
+PARAMETER 6: LOT AREA PER DWELLING UNIT (ZONING DENSITY)
+- In R6 Quality Housing districts, the minimum lot area required per dwelling unit (apartment) is typically 680 square feet.
+- Calculation Rule: Take the Total Lot Area and divide it by the Total Proposed Number of Dwelling Units. If the resulting square footage per unit is less than 680, the building is overcrowded by law and it is a FAILED audit.

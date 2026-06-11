@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,13 +41,18 @@
                 
                 <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
                     <label for="zoning-district" class="block text-sm font-semibold text-slate-700 tracking-tight mb-2">
-                        Target Residential Zoning District
+                        Target Zoning District Framework
                     </label>
                     <div class="relative">
                         <select id="zoning-district" name="zoning_district" class="w-full appearance-none rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-xs focus:border-blue-500 focus:outline-hidden focus:ring-2 focus:ring-blue-100 transition-all cursor-pointer">
-                            <option value="nyc_r6_rules.txt" selected>🏢 R6 — Medium Density (Quality Housing Regulations)</option>
-                            <option value="nyc_r7_rules.txt">🏙️ R7 — Medium Density (Elevator / Mid-Rise Framework)</option>
-                            <option value="nyc_r8_rules.txt">🏙️ R8 — High Density (Apartment Tower Framework)</option>
+                            <optgroup label="Residential Districts (R)">
+                                <option value="nyc_r6_rules.txt" selected>🏢 R6 — Medium Density (Quality Housing Regulations)</option>
+                                <option value="nyc_r7_rules.txt">🏙️ R7 — Medium Density (Elevator / Mid-Rise Framework)</option>
+                                <option value="nyc_r8_rules.txt">🏙️ R8 — High Density (Apartment Tower Framework)</option>
+                            </optgroup>
+                            <optgroup label="Commercial Districts (C)">
+                                <option value="nyc_c6_rules.txt">🏢 C6 — High Density Corporate (Office, Retail & Mixed-Use Hubs)</option>
+                            </optgroup>
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
                             ▼
